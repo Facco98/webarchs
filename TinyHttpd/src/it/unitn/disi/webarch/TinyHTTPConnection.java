@@ -3,6 +3,7 @@ package it.unitn.disi.webarch;
 import java.io.*;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -33,13 +34,12 @@ public class TinyHTTPConnection implements Runnable {
                 response = new TinyHTTPResponse(version, HttpStatus.BAD_REQUEST, headers, "Unsupported method: " + request.getMethod());
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.info(Arrays.toString(e.getStackTrace()));
             String version = (request == null) ? "HTTP/1.1" : request.getVersion();
             Map<String, String> headers = this.getPlainTextHeaders("Internal server error: " + e.getMessage());
             response = new TinyHTTPResponse(version, HttpStatus.BAD_REQUEST, headers, "Internal server error: " + e.getMessage());
 
         } catch (HttpProtocolException e){
-            e.printStackTrace();
             String version = "HTTP/1.1";
             Map<String, String> headers = this.getPlainTextHeaders("Bad request: " + e.getMessage());
             response = new TinyHTTPResponse(version, HttpStatus.BAD_REQUEST, headers, "Bad request: " + e.getMessage());
