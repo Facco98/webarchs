@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <h1>Hello world, this is index.html</h1>
+        Course name: &nbsp;
+        <jhtml>
+            courseName: java.lang.String = "Web Architectures 2021/2022"
+            courseName
+        </jhtml>
+        <br>
+        First letter, lowercase and replacing "e" with "3": &nbsp;
+        <jhtml>
+            myVar: java.lang.String = courseName -> replaceAll("e", "3") -> toLowerCase()
+            length: java.lang.Integer = myVar -> length()
+            myVar -> substring(0,1) -> toLowerCase()
+        </jhtml>
+        <br>
+        String replacing "e" with "3" without first letter and reversed: &nbsp;
+        <jhtml>
+            sb: java.lang.StringBuilder = myVar -> substring(1, length)
+            sb -> reverse()
+        </jhtml>
+
+    </body>
+</html>
