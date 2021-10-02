@@ -3,3 +3,4 @@ Slides/*
 mamp/*
 .DS_Store
 *.pages
+**/*.class
