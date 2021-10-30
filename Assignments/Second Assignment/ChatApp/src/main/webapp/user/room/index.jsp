@@ -7,15 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:useBean id="roomInfo" type="it.unitn.disi.webarch.facchinetti.chat.ChatApp.bean.RoomBean" scope="request" />
+<jsp:useBean id="roomInfo" type="it.unitn.disi.webarch.facchinetti.chatapp.bean.RoomBean" scope="request" />
 <html>
-<meta http-equiv="refresh" content="5">
+<meta http-equiv="refresh" content="15">
 <head>
     <title>${roomInfo.name} - FreeChat</title>
 </head>
 <body>
 <jsp:include page="../banner.jsp"/>
-<b>Welcome in the room: ${roomInfo.name}</b>
+<b>Welcome in the room: ${roomInfo.name}</b> - <a onclick="window.location.reload()" href="#">Reload</a> - <a href="<c:url value="/user/rooms"/>">Leave the room</a>
 <form method="POST">
     <label for="newMessageContent">Your message: </label>
     <input type="text" name="messageContent" id="newMessageContent">
