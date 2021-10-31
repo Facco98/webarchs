@@ -20,19 +20,17 @@ async function onCardClick(rowIndex, colIndex){
     });
     const gameState = await result.json();
     const finished = gameState.attempts <= 0;
-    const wrongPairDiscovered = false;
     updateLabel('#attempts-left', 'Attempts left:', gameState.attempts);
     updateLabel('#score', 'Score:', gameState.score);
-    updateField('#field', gameState.values, !finished && !wrongPairDiscovered);
+    const makeClickable = !finished && !gameState.failed;
+    updateField('#field', gameState.values, makeClickable);
 
-    let timeoutCallback = loadGame;
-    if( finished ){
-        updateLabel('#attempts-left', '', 'GAME OVER')
-        timeoutCallback = () => window.location.href='.';
-
+    if( !makeClickable && !finished ){
+        window.setTimeout(loadGame, 1000);
+    } else if( finished ) {
+        updateLabel('#attempts-left', '', 'GAME OVER');
+        window.setTimeout(() => window.location.href = window.location.href, 1000);
     }
-    console.log(timeoutCallback)
-    window.setTimeout(timeoutCallback, 1000)
 
 }
 
@@ -74,6 +72,7 @@ function updateField(querySelector, field, makeClickable){
 function loadGame(){
 
 
+    console.log('loading game');
     fetch(BASE_GAME_URL).then(resp => resp.json()).then(game => {
 
         updateLabel('#attempts-left', 'Attempts left:', game.attempts);

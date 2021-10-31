@@ -6,7 +6,7 @@
 
     <context-param>
         <param-name>MODE</param-name>
-        <param-value>test</param-value>
+        <param-value>PRODUCTION</param-value>
     </context-param>
 
     <servlet>
@@ -71,6 +71,18 @@
     <filter-mapping>
         <filter-name>GameFilter</filter-name>
         <url-pattern>/user/game.html</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>NotAdmittedFilter</filter-name>
+        <filter-class>it.unitn.disi.webarchs.claudiofacchinetti.memory.filter.NotAdmittedFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>NotAdmittedFilter</filter-name>
+        <url-pattern>/</url-pattern>
+        <url-pattern>/index.jsp</url-pattern>
+        <url-pattern>/admit</url-pattern>
     </filter-mapping>
 
 </web-app>

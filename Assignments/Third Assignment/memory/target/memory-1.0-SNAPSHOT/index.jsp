@@ -9,6 +9,7 @@
 <form action="admit" method="POST">
     <label for="txt-name">Enter your name:</label>
     <input type="text" name="name" id="txt-name">
+    <br>
     <input type="submit" value="Let's go!">
 </form>
 

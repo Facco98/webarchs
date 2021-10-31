@@ -57,7 +57,7 @@ public class GameServlet extends HttpServlet {
             g.getGameState().checkLast();
 
             if( g.getGameState().clicked(requestBean.getRowIndex(), requestBean.getColIndex()) ) {
-                Boolean failed = g.getGameState().getLastFlipped() != null;
+                Boolean failed = g.getGameState().getToFlipNext() != null;
                 GameBean gameBean = new GameBeanBuilder().setGame(g).setFailed(failed).build();
 
                 resp.setStatus(200);

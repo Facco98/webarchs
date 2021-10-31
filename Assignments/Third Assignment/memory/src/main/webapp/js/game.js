@@ -22,13 +22,14 @@ async function onCardClick(rowIndex, colIndex){
     const finished = gameState.attempts <= 0;
     updateLabel('#attempts-left', 'Attempts left:', gameState.attempts);
     updateLabel('#score', 'Score:', gameState.score);
-    updateField('#field', gameState.values, !finished && !gameState.failed);
+    const makeClickable = !finished && !gameState.failed;
+    updateField('#field', gameState.values, makeClickable);
 
-    if( failed && !finished ){
+    if( !makeClickable && !finished ){
         window.setTimeout(loadGame, 1000);
     } else if( finished ) {
         updateLabel('#attempts-left', '', 'GAME OVER');
-        window.setTimeout(() => window.location.reload(), 1000);
+        window.setTimeout(() => window.location.href = window.location.href, 1000);
     }
 
 }
@@ -71,6 +72,7 @@ function updateField(querySelector, field, makeClickable){
 function loadGame(){
 
 
+    console.log('loading game');
     fetch(BASE_GAME_URL).then(resp => resp.json()).then(game => {
 
         updateLabel('#attempts-left', 'Attempts left:', game.attempts);

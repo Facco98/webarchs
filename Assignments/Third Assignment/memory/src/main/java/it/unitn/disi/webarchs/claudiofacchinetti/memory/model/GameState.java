@@ -125,4 +125,8 @@ public class GameState {
         }
 
     }
+
+    public Pair<Card, Card> getToFlipNext() {
+        return toFlipNext;
+    }
 }
