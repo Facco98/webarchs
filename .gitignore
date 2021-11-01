@@ -4,3 +4,5 @@ mamp/*
 .DS_Store
 *.pages
 **/*.class
+**/*.zp
+**/*.pdf
