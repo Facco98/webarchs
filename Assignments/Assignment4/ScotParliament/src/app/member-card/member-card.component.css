@@ -1,0 +1,19 @@
+mat-card{
+
+  max-width: 300px;
+  text-align: center;
+  cursor: pointer;
+}
+
+img{
+
+  max-width: 300px;
+  max-height: 200px;
+  min-width: 100px;
+  min-height: 100px;
+  background-size: cover;
+  width: auto;
+  height: auto;
+  aspect-ratio: auto;
+
+}

@@ -1,0 +1,25 @@
+<mat-spinner *ngIf="!paginated">
+
+</mat-spinner>
+
+<div class="container">
+
+  <div class="header">
+    <mat-slide-toggle color="primary" [(ngModel)]="onlyActive" (change)="changed($event)">
+      Only active
+    </mat-slide-toggle>
+    <mat-paginator #paginator [showFirstLastButtons]="true" [pageSizeOptions]="[8, 16]">
+    </mat-paginator>
+  </div>
+
+
+  <div class="grid-container">
+    <app-member-card [member]="member" *ngFor="let member of ( paginated | async )">
+    </app-member-card>
+  </div>
+
+
+</div>
+
+
+

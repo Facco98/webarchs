@@ -1,0 +1,15 @@
+<h3>Parties</h3>
+<mat-spinner *ngIf="!parties">
+
+</mat-spinner>
+
+<div *ngIf="parties">
+  <ul>
+    <li *ngFor="let party of parties">
+      {{party.ActualName}} | From {{getDate(party.ValidFromDate)}}
+      <span *ngIf="party.ValidUntilDate"> to {{getDate(party.ValidUntilDate!)}}</span>
+    </li>
+  </ul>
+
+
+</div>

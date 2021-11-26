@@ -1,0 +1,14 @@
+<h3>Websites</h3>
+<mat-spinner *ngIf="!websites">
+
+</mat-spinner>
+
+<div *ngIf="websites">
+  <ul>
+    <li *ngFor="let website of websites">
+      {{website.WebURL.toUpperCase()}}
+    </li>
+  </ul>
+
+
+</div>

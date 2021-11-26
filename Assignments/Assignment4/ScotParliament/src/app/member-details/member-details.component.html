@@ -1,0 +1,20 @@
+<mat-spinner *ngIf="!(generalData$|async) && !(parties$ | async) && !(websites$ | async)">
+
+</mat-spinner>
+
+<div class="container" *ngIf="(generalData$|async) || (parties$ | async) || (websites$ | async)">
+
+  <app-member-general-data [data]="generalData$ | async">
+
+  </app-member-general-data>
+  <hr>
+  <app-member-parties-data [parties]="parties$ | async">
+
+  </app-member-parties-data>
+  <hr>
+  <app-member-websites-data [websites]="websites$ | async">
+
+  </app-member-websites-data>
+
+
+</div>

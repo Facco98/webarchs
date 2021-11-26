@@ -1,0 +1,21 @@
+hr{
+
+  color: gray;
+
+}
+
+.container{
+
+  width: min-content;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+app-member-general-data, app-member-parties-data, app-member-websites-data{
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}

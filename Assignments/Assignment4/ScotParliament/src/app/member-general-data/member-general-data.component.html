@@ -1,0 +1,12 @@
+<mat-spinner *ngIf="!data">
+
+</mat-spinner>
+
+<div *ngIf="data">
+  <h1>Member {{data.PersonID}}</h1>
+
+  <img [src]="(data.PhotoURL && data.PhotoURL.length > 0 ? data.PhotoURL : getDefaultImage(data.GenderTypeID))" alt="Photo of {{data.ParliamentaryName}}">
+
+  <p class="name">{{data.ParliamentaryName}}</p>
+  <p class="date">{{getDate(data.BirthDate)}}</p>
+</div>
