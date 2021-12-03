@@ -6,3 +6,4 @@ mamp/*
 **/*.class
 **/*.zp
 **/*.pdf
+**/wildfly*
