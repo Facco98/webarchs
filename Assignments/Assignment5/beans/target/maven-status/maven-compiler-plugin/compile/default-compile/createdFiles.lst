@@ -1,0 +1,8 @@
+it/unitn/disi/webarchs/facchinetti/booker/dto/ReservationDTO.class
+it/unitn/disi/webarchs/facchinetti/booker/dto/AccommodationDTO.class
+it/unitn/disi/webarchs/facchinetti/booker/dto/HotelDTO.class
+it/unitn/disi/webarchs/facchinetti/booker/dto/ApartmentDTO.class
+it/unitn/disi/webarchs/facchinetti/booker/facade/ReservationManager.class
+it/unitn/disi/webarchs/facchinetti/booker/dto/AccommodationPriceDTO.class
+it/unitn/disi/webarchs/facchinetti/booker/dto/HotelPriceDTO.class
+it/unitn/disi/webarchs/facchinetti/booker/dto/ApartmentPriceDTO.class

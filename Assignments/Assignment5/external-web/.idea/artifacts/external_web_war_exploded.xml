@@ -1,0 +1,42 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="external-web:war exploded">
+    <output-path>$PROJECT_DIR$/target/external-web-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>external-web</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="external-web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax:javaee-web-api:8.0.1" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.jboss:jboss-ejb-client:2.1.4.Final" />
+          <element id="library" level="project" name="Maven: org.jboss:jboss-remote-naming:2.0.4.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.marshalling:jboss-marshalling:1.4.11.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.marshalling:jboss-marshalling-river:1.4.11.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.remoting:jboss-remoting:4.0.21.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.sasl:jboss-sasl:1.0.5.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.spec.javax.ejb:jboss-ejb-api_3.2_spec:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.xnio:xnio-api:3.4.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly.common:wildfly-common:1.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.xnio:xnio-nio:3.4.0.Final" />
+          <element id="library" level="project" name="Maven: org.wildfly.checkstyle:wildfly-checkstyle-config:1.0.4.Final" />
+          <element id="library" level="project" name="Maven: it.unitn.disi.webarchs.facchinetti.booker:shared-beans:0.0.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/external-web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="external-web/web/Web" />
+    </root>
+  </artifact>
+</component>
